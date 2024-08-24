@@ -101,7 +101,7 @@ export default async function getPropertySlugPage({ params }: Props) {
                     </p>
                     <div className="mt-5">
                         <RenderContent data={propiedad.descripcion} />
-                        <MessageLink message={`el ${propiedad.title}  http://localhost:3000/propiedad/${slug}`} />
+                        <MessageLink message={`el ${propiedad.title}  https://inmobiliaria-cajamarca.vercel.app/propiedad/${slug}`} />
                     </div>
                 </div>
 
