@@ -26,8 +26,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <>
+      <meta name="google-site-verification" content="EeEL6YMTfcgl0bo53-7OP8-dVW5_SMOOT9cKeFvcrZQ" />
+      <html lang="en">
+        <body className={inter.className}>{children}</body>
+      </html>
+    </>
   );
 }

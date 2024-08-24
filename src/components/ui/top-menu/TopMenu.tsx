@@ -19,9 +19,8 @@ export const TopMenu = () => {
                 <Link className='m-2 p-2 rounded-md transition-all hover:bg-gray-100' href="/categoria/departamentos">Departamentos</Link>
             </div>
 
-            {/* search, cart,menu */}
             <Link
-                href={`http://wa.me/51950353622?text=${encodeURIComponent('Hola, quiero más información sobre las propiedades')}`}
+                href={`http://wa.me/51997878631?text=${encodeURIComponent('Hola, quiero más información sobre las propiedades')}`}
                 target="_blank"
                 className='flex items-center'
             >
