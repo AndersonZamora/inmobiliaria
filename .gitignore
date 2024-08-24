@@ -7,10 +7,11 @@
 .yarn/install-state.gz
 
 /src/app/admin
-/src/admin
-/mongodb_replica
 /src/app/api
+/src/admin
 /src/seed
+/mongodb_replica
+
 # testing
 /coverage
 
