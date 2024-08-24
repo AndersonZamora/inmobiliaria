@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { Loader } from '@googlemaps/js-api-loader';
 
 interface Props {
@@ -38,20 +38,12 @@ export const MapComponent = ({ lat = -7.157006432875966, lng = -78.5174987750588
                     position: position,
                     gmpDraggable: true
                 });
-
-                marker.addListener('dragend', (event: google.maps.MapMouseEvent) => {
-                    if (event.latLng) {
-                        const newLat = event.latLng.lat();
-                        const newLng = event.latLng.lng();
-                        // handleCoord([newLat, newLng])
-                    }
-                })
             }
             initMap();
         } catch (error) {
 
         }
-    }, [])
+    }, [lat, lng])
 
     return (
         <div className='rounded' style={{ width: '100%', height: '500px' }} ref={mapRef} />
