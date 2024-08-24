@@ -45,7 +45,7 @@ export async function generateMetadata(
         openGraph: {
             title: product?.title ?? 'Producto',
             description: descriptionText ?? '',
-            images: [`/products/${product?.images[0]}`],
+            images: [`/propiedades/${product?.images[0]}`],
             authors: 'CinCout Technology',
             emails: 'cincout.technology@gmail.com'
         },
