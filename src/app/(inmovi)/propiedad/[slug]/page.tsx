@@ -22,12 +22,29 @@ export async function generateMetadata(
 
     const product = await getProductBySlug(slug)
 
+    const descriptionObj = product?.descripcion ? JSON.parse(product.descripcion) : null;
+
+    let descriptionText = ''
+
+    if (descriptionObj && descriptionObj.type === 'doc') {
+        descriptionText = descriptionObj.content
+            .map((node: any) => {
+                if (node.type === 'paragraph' && node.content) {
+                    return node.content
+                        .map((childNode: any) => childNode.text)
+                        .join(' ');
+                }
+                return '';
+            })
+            .join(' ');
+    }
+
     return {
         title: product?.title ?? 'Producto',
-        description: product?.descripcion ?? '',
+        description: descriptionText ?? '',
         openGraph: {
             title: product?.title ?? 'Producto',
-            description: product?.descripcion ?? '',
+            description: descriptionText ?? '',
             images: [`/products/${product?.images[0]}`],
             authors: 'CinCout Technology',
             emails: 'cincout.technology@gmail.com'
