@@ -16,8 +16,6 @@ export const postProperty = async ({
 }> => {
     try {
 
-        console.log(data)
-
         const { title, slug, tipo, price, area, newLng, newLat, descripcion, images } = data;
 
         await prisma.propertyc.create({
