@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Inmobiliaria| Ana',
+    template: '%s - Inmobiliaria | Ana - Cajamarca',
     default: 'Inicio - Inmobiliaria | Ana'
   },
   description: "Inmobiliaria Ana en cajamarca",

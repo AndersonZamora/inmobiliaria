@@ -39,8 +39,7 @@ export async function generateMetadata(
             .join(' ');
     }
 
-    const previousImages = (await parent).openGraph?.images || [];
-    
+
     return {
         title: product?.title ?? 'Producto',
         description: descriptionText ?? '',
@@ -50,16 +49,16 @@ export async function generateMetadata(
             images: [
                 {
                     url: `/propiedades/${product?.images[0]}`,
-                    width:'800',
-                    height:'600',
+                    width: '800',
+                    height: '600',
                 }
-                , ...previousImages],
+            ],
             authors: 'CinCout Technology',
             emails: 'cincout.technology@gmail.com'
         },
     }
 }
- 
+
 
 export default async function getPropertySlugPage({ params }: Props) {
 
