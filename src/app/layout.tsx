@@ -4,19 +4,20 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Inmobiliaria | Ana - Cajamarca',
-    default: 'Inicio - Inmobiliaria | Ana'
+    template: '%s - Ana Inmobiliaria | Inmobiliaria en Cajamarca',
+    default: 'Ana Inmobiliaria | Inmobiliaria en Cajamarca'
   },
-  description: "Inmobiliaria Ana en cajamarca",
+  description: 'Inmobiliaria: Venta y alquiler de casas, departamentos, terrenos en Cajamarca.',
   openGraph: {
     title: {
-      template: '%s - Inmobiliaria| Ana',
-      default: 'Inicio - Inmobiliaria | Ana'
+      template: '%s - Ana Inmobiliaria | Inmobiliaria en Cajamarca',
+      default: 'Ana Inmobiliaria | Inmobiliaria en Cajamarca'
     },
     description: "Si estás buscando invertir en un lugar de ensueño, ¡esta es tu oportunidad! Nuestra inmobiliaria te ofrece lotes de terreno y departamentos en las mejores zonas de Cajamarca",
     images: '/imgs/inmobiliaria.jpg',
     authors: 'CinCout Technology',
-    emails: 'cincout.technology@gmail.com'
+    emails: 'cincout.technology@gmail.com',
+    locale:'es_ES',
   }
 };
 

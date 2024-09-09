@@ -46,6 +46,6 @@ export const MapComponent = ({ lat = -7.157006432875966, lng = -78.5174987750588
     }, [lat, lng])
 
     return (
-        <div className='rounded' style={{ width: '100%', height: '500px' }} ref={mapRef} />
+        <div className='rounded h-dvh'  ref={mapRef} />
     )
 }

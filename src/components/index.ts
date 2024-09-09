@@ -15,3 +15,6 @@ export { RenderContent } from './propiedad/RenderContent';
 export { MessageLink } from './propiedad/MessageLink';
 
 export { MapComponent } from './map/MapComponent';
+
+export { VideoPlayer } from './media/VideoPlayer';
+export { SVGViewer } from './media/SVGViewer';

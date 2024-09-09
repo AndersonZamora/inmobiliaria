@@ -3,7 +3,7 @@ export const revalidate = 28800;
 import { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import { getProductBySlug } from "@/actions";
-import { DestockSlideShow, MapComponent, MessageLink, MobileSlideshow, RenderContent, RenderMedida, RenderOption } from "@/components";
+import { DestockSlideShow, MapComponent, MessageLink, MobileSlideshow, RenderContent, RenderMedida, RenderOption, SVGViewer, VideoPlayer } from "@/components";
 import { titleFont } from "@/config/fonts";
 import { currencyFormat } from "@/utils";
 
@@ -41,20 +41,18 @@ export async function generateMetadata(
 
 
     return {
-        title: product?.title ?? 'Producto',
+        title: product?.title ?? 'Propiedad',
         description: descriptionText ?? '',
         openGraph: {
-            title: product?.title ?? 'Producto',
+            title: product?.title ?? 'Propiedad',
             description: descriptionText ?? '',
-            images: [
-                {
-                    url: `/propiedades/${product?.images[0]}`,
-                    width: '800',
-                    height: '600',
-                }
-            ],
-            authors: 'CinCout Technology',
-            emails: 'cincout.technology@gmail.com'
+            images: {
+                url: `/propiedades/${product?.images[0]}`,
+                width:'1200',
+                height:'630',
+                type:'jpeg'
+            },
+            url:`https://inmobiliaria-cajamarca.vercel.app/${product?.slug}`,
         },
     }
 }
@@ -77,7 +75,9 @@ export default async function getPropertySlugPage({ params }: Props) {
                 <div className="col-span-1 sm:col-span-2 md:col-span-2 hidden md:block">
                     <DestockSlideShow images={propiedad.images} title={propiedad.title} />
                     <br />
-                    <MapComponent lat={+propiedad.newLat} lng={+propiedad.newLng} />
+
+                    <VideoPlayer />
+
                 </div>
                 <div className="col-span-1 sm:col-span-2 md:col-span-2 block md:hidden">
                     <MobileSlideshow images={propiedad.images} title={propiedad.title} />
@@ -109,12 +109,28 @@ export default async function getPropertySlugPage({ params }: Props) {
                     <div className="mt-5">
                         <RenderContent data={propiedad.descripcion} />
                         <MessageLink message={`el ${propiedad.title}  https://inmobiliaria-cajamarca.vercel.app/propiedad/${slug}`} />
-                    </div>
-                </div>
 
+                        <div className="hidden md:block">
+                            <br />
+                            <MapComponent lat={+propiedad.newLat} lng={+propiedad.newLng} />
+                        </div>
+                    </div>
+
+                </div>
+                <div className="col-span-4 hidden md:block">
+                    <SVGViewer heig={'800px'}/>
+                </div>
+            </div>
+            <div className="px-0 block md:hidden">
+                <VideoPlayer />
+                <br />
             </div>
             <div className="px-0 block md:hidden">
                 <MapComponent lat={+propiedad.newLat} lng={+propiedad.newLng} />
+            </div>
+            <div className="px-0.5 block md:hidden">
+                <br />
+                <SVGViewer />
             </div>
         </>
     )

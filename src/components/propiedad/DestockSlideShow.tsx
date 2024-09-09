@@ -40,8 +40,8 @@ export const DestockSlideShow = ({ images, title, className }: Props) => {
                             <Image
                                 src={`/propiedades/${image}`}
                                 alt={title}
-                                width={1024}
-                                height={800}
+                                width={2000}
+                                height={2000}
                                 priority
                                 className='rounded-lg object-fill w-auto h-auto'
                             />
