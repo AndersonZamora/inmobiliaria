@@ -1,6 +1,4 @@
-'use client';
 
-import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { IProperty } from '@/interfaces';
@@ -12,19 +10,15 @@ interface Props {
 
 export const PropertyGridItem = ({ propiedad }: Props) => {
 
-    const [displayImage, setDisplayImage] = useState(propiedad.images[0]);
-
     return (
         <div className='rounded-md overflow-hidden fade-in'>
-            <Link href={`/propiedad/${propiedad.slug}`}>
+            <Link href={`/propiedad/${propiedad.slug}`} className='h-3'>
                 <Image
-                    src={`/propiedades/${displayImage}`}
+                    src={`/propiedades/${propiedad.images[0]}`}
                     alt={propiedad.title}
                     className='w-full object-cover rounded'
                     width={500}
                     height={500}
-                    onMouseEnter={() => setDisplayImage(propiedad.images[0])}
-                    onMouseLeave={() => setDisplayImage(propiedad.images[1])}
                 />
             </Link>
 

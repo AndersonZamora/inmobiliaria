@@ -37,19 +37,10 @@ export const getPropertys = async ({
 
         const totalPages = Math.ceil(totalCount / take);
 
-        const fillProducts: IProperty[] = []
-
-        products.map(p => {
-            const som = fillProducts.some(a => a.id !== p.id);
-            if (!som) {
-                fillProducts.push(p)
-            }
-        })
-
         return {
             currentPage: page,
             totalPages: totalPages,
-            propiedades: fillProducts
+            propiedades: products
         }
     } catch (error) {
         throw new Error('No se pudo cargar las propiedades')
